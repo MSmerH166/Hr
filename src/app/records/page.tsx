@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+export const dynamic = "force-dynamic";
+
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Card } from "@/components/Card";
@@ -11,6 +13,14 @@ import { EmployeeRecord, loadRecords, saveRecords } from "@/lib/records";
 import { AuthGuard } from "@/components/AuthGuard";
 
 export default function RecordsPage() {
+  return (
+    <Suspense fallback={null}>
+      <RecordsContent />
+    </Suspense>
+  );
+}
+
+function RecordsContent() {
   const [records, setRecords] = useState<EmployeeRecord[]>([]);
   const [filters, setFilters] = useState({
     text: "",
