@@ -6,6 +6,19 @@ const defaultSettings: Settings = {
   leaveDaysFirst5Years: 21,
   leaveDaysAfter5Years: 30,
   dailySalaryMethod: "30",
+  yearDaysBasis: 365,
+  dayCountInclusive: true,
+  dayRateDivisor: 30,
+  defaultLeaveTripDays: 60,
+  graceDays: 0,
+  eosFirst5YearsMonthsPerYear: 0.5,
+  eosAfter5YearsMonthsPerYear: 1,
+  currency: "SAR",
+  requireLogin: true,
+  accessCode: "",
+  loginUsername: "admin",
+  loginPassword: "123456",
+  userRole: "مشرف",
 };
 
 export function getSettings(): Settings {
